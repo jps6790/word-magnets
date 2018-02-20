@@ -14,4 +14,4 @@ Current checkpoint progress:
 -App has a toolbar at the bottom that allows the user to select from three different word banks
 
 Images are in the images directory of this repository
-
+https://github.com/jps6790/word-magnets/tree/nathan/images
