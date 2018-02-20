@@ -2,16 +2,25 @@
 //  ViewController.swift
 //  Project1WordMagnets
 //
-//  Created by Jordan Sullivan on 2/12/18.
-//  Copyright © 2018 Jordan Sullivan. All rights reserved.
+//  Created by Jordan Sullivan & Nathan Sun on 2/19/18.
+//  Copyright © 2018 Jordan Sullivan & Nathan Sun. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    // Word bank
+    // Word banks
     let words = ["could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed","create","like","lap","is","ing","I","her","drive","get","soft","screen","protect","online","meme","to","they","that","tech","space","source","y","write","while"]
+    
+    let words2 = ["valley","I","departure","reveal","blow","the","conviction","dealer","is","ministry","observation","a","estimate","house","donor","cemetery","breast","revoke","favor","to","they","that"]
+    
+    let words3 = ["beauty","bare","at","as","as","an","a","a","ed","dream","cry","but","forest","fiddle","fast","er","enourmous","lather","it","it","his","moon","sausage","lagomorph","rain","song","to","wind","were","together","you","boy","bear"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        placeWords()
+    }
     
     // Places each word from word bank in rows
     func placeWords(){
@@ -23,43 +32,43 @@ class ViewController: UIViewController {
         
         view.backgroundColor = UIColor.orange
         
-        for word in words{
-            let l = UILabel()
-            l.backgroundColor = UIColor.white
-            l.text = word
-            l.textAlignment = .center
-            l.sizeToFit()
+        for word in words {
+            let label = UILabel()
+            label.backgroundColor = UIColor.white
+            label.text = word
+            label.textAlignment = .center
+            label.sizeToFit()
             
             // Corrects short words/letters and adds white space
-            if l.frame.size.width < 20{
-                l.frame.size.width = 40
+            if label.frame.size.width < 20 {
+                label.frame.size.width = 40
             }
             else{
-                l.frame.size.width += 20
+                label.frame.size.width += 20
             }
-            l.frame.size.height = 40
+            label.frame.size.height = 40
             
             x += wordSpacing
             
             // Moves to next row
-            if (x+l.frame.size.width+wordSpacing)>(UIScreen.main.bounds.width-safety){
+            if (x + label.frame.size.width+wordSpacing) > (UIScreen.main.bounds.width - safety) {
                 x = wordSpacing
                 wordRow += 1
             }
-            y = wordRow*(wordSpacing+l.frame.size.height)
+            y = wordRow * (wordSpacing + label.frame.size.height)
             
             // Position words
-            l.frame.origin.x = x
-            l.frame.origin.y = y
+            label.frame.origin.x = x
+            label.frame.origin.y = y
             
-            x += l.frame.size.width
+            x += label.frame.size.width
             
-            l.isUserInteractionEnabled = true
+            label.isUserInteractionEnabled = true
             
-            let panGesture = UIPanGestureRecognizer(target:self,action:#selector(doPanGesture))
-            l.addGestureRecognizer(panGesture)
+            let panGesture = UIPanGestureRecognizer(target: self, action: #selector(doPanGesture))
+            label.addGestureRecognizer(panGesture)
             
-            view.addSubview(l)
+            view.addSubview(label)
         }
     }
     
@@ -68,11 +77,7 @@ class ViewController: UIViewController {
         let position = panGesture.location(in: view)
         label.center = position
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        placeWords()
-    }
+
+
 }
 
