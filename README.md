@@ -13,3 +13,5 @@ Current checkpoint progress:
 -App has drag-able words
 -App has a toolbar at the bottom that allows the user to select from three different word banks
 
+Images are in the images directory of this repository
+
