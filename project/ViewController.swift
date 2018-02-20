@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Project1WordMagnets
 //
-//  Created by Jordan Sullivan on 2/12/18.
-//  Copyright © 2018 Jordan Sullivan. All rights reserved.
+//  Created by Jordan Sullivan & Nathan Sun on 2/12/18.
+//  Copyright © 2018 Jordan Sullivan & Nathan Sun. All rights reserved.
 //
 
 import UIKit
@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     let words2 = ["valley", "I", "departure", "reveal", "blow","the", "conviction", "dealer", "is","ministry", "observation","a", "estimate", "house", "donor", "cemetery", "breast", "revoke", "favor","to","they","that"]
     
     let words3 = ["beauty", "bare", "at", "as", "as", "an", "a", "a", "ed", "dream", "cry", "but", "forest", "fiddle", "fast", "er", "enourmous", "lather", "it", "it","his", "moon", "sausage", "lagomorph", "rain","song", "to", "wind", "were" , "together", "you", "boy","bear"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        placeWords()
+    }
     
     // Places each word from word bank in rows
     func placeWords(){
@@ -72,11 +77,7 @@ class ViewController: UIViewController {
         let position = panGesture.location(in: view)
         label.center = position
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        placeWords()
-    }
+
+
 }
 

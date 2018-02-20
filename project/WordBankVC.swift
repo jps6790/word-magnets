@@ -2,8 +2,8 @@
 //  WordBankVC.swift
 //  Project1WordMagnets
 //
-//  Created by Student on 2/19/18.
-//  Copyright © 2018 Jordan Sullivan. All rights reserved.
+//  Created by Jordan Sullivan & Nathan Sun on 2/12/18.
+//  Copyright © 2018 Jordan Sullivan & Nathan Sun. All rights reserved.
 //
 
 import UIKit
