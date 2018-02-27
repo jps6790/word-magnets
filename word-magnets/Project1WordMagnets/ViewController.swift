@@ -17,14 +17,14 @@ class ViewController: UIViewController {
     
     let words3 = ["beauty","bare","at","as","as","an","a","a","ed","dream","cry","but","forest","fiddle","fast","er","enormous","lather","it","it","his","moon","sausage","lagomorph","rain","song","to","wind","were","together","you","boy","bear"]
     
-    override func viewDidLoad () {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         placeWords()
     }
     
     // Places each word from word bank in rows
-    func placeWords () {
+    func placeWords() {
         var wordRow:CGFloat = 1.0
         let wordSpacing:CGFloat = 10.0
         let safety:CGFloat = 100        // Right margin to help keep words in view
@@ -72,12 +72,12 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func doPanGesture (panGesture: UIPanGestureRecognizer) {
+    @objc func doPanGesture(panGesture: UIPanGestureRecognizer) {
         let label = panGesture.view as! UILabel
         let position = panGesture.location(in: view)
         label.center = position
     }
 
+    
 }
-
 
