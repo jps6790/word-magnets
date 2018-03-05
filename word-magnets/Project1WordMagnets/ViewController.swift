@@ -25,13 +25,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func share(_ sender: AnyObject) {
-        let image = self.view.takeSnapshot()
-        let textToShare = "I made a poem!"
-        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
-        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!,image!]
-        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-        activityVC.excludedActivityTypes = [UIActivityType.print]
-        self.present(activityVC, animated: true, completion: nil)
+        //TODO: Fix file with takeSnapshot() method to implement in ViewController.swift
+//        let image = self.view.takeSnapshot()
+//        let textToShare = "I made a poem!"
+//        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
+//        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!,image!]
+//        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+//        activityVC.excludedActivityTypes = [UIActivityType.print]
+//        self.present(activityVC, animated: true, completion: nil)
     }
     @IBAction func setImageBG(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -41,13 +42,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         self.present(imagePickerController, animated: true, completion: nil)
     }
     
-    ///VIEW DID LOAD FUNCTION
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange
         placeWords()
     }
-    
     
     //MARK: - UIPickerController Delegate Methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]){
@@ -64,13 +63,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         picker.dismiss(animated: true, completion: nil)
     }
     
+    //MARK: - Word Placement Methods
     // Places each word from word bank in rows
     func placeWords() {
-        var wordRow:CGFloat = 1.0
-        let wordSpacing:CGFloat = 10.0
-        let safety:CGFloat = 100        // Right margin to help keep words in view
-        var x:CGFloat = wordSpacing
-        var y:CGFloat = wordSpacing
+        let wordSpacing: CGFloat = 10
+        let safety: CGFloat = 20
+        let topMargin: CGFloat = UIScreen.main.bounds.size.height / 20
+        let minMagnetLength: CGFloat = 40
+        let minMagnetHeight = minMagnetLength
+        let magnetAdjustmentValue = minMagnetLength / 2
+        var wordRow = 0
+        var x = safety
+        var y = safety
         
         for word in words {
             let label = UILabel()
@@ -80,27 +84,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             label.sizeToFit()
             
             // Corrects short words/letters and adds white space
-            if label.frame.size.width < 20 {
-                label.frame.size.width = 40
+            if label.frame.size.width < magnetAdjustmentValue {
+                label.frame.size.width = minMagnetLength
             } else {
-                label.frame.size.width += 20
+                label.frame.size.width += magnetAdjustmentValue
             }
-            label.frame.size.height = 40
             
-            x += wordSpacing
+            label.frame.size.height = minMagnetHeight
             
-            // Moves to next row
-            if (x + label.frame.size.width + wordSpacing) > (UIScreen.main.bounds.width - safety) {
-                x = wordSpacing
+            // Moves word to next row
+            if (x + label.frame.size.width + safety) > (UIScreen.main.bounds.width) {
+                x = safety
                 wordRow += 1
             }
-            y = wordRow * (wordSpacing + label.frame.size.height)
+            
+            // Assigns y-coordinate
+            y = (CGFloat(wordRow) * (wordSpacing + label.frame.size.height)) + safety + topMargin
             
             // Position words
             label.frame.origin.x = x
             label.frame.origin.y = y
             
-            x += label.frame.size.width
+            x = x + label.frame.size.width + wordSpacing
             
             label.isUserInteractionEnabled = true
             
@@ -115,12 +120,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         
     }
     
+    //MARK: - Pan Gestures
     @objc func doPanGesture(panGesture: UIPanGestureRecognizer) {
         let label = panGesture.view as! UILabel
         let position = panGesture.location(in: view)
         label.center = position
     }
 
-    
 }
-
