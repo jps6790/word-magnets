@@ -19,6 +19,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     var backgroundImage: UIImage?
     
+    @IBAction func reset(_ sender: Any) {
+
+        //placeWords()
+    }
+    
     @IBAction func share(_ sender: AnyObject) {
         let image = self.view.takeSnapshot()
         let textToShare = "I made a poem!"
@@ -39,7 +44,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     ///VIEW DID LOAD FUNCTION
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.orange
         placeWords()
     }
     
@@ -66,8 +71,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         let safety:CGFloat = 100        // Right margin to help keep words in view
         var x:CGFloat = wordSpacing
         var y:CGFloat = wordSpacing
-        
-        view.backgroundColor = UIColor.orange
         
         for word in words {
             let label = UILabel()
@@ -106,6 +109,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             
             view.addSubview(label)
         }
+    }
+    
+    func deleteWords(){
+        
     }
     
     @objc func doPanGesture(panGesture: UIPanGestureRecognizer) {
