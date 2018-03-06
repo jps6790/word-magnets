@@ -11,17 +11,19 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     // Word banks
-    let words = ["could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed","create","like","lap","is","ing","I","her","drive","get","soft","screen","protect","online","meme","to","they","that","tech","space","source","y","write","while"]
+    let words1 = ["could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed","create","like","lap","is","ing","I","her","drive","get","soft","screen","protect","online","meme","to","they","that","tech","space","source","y","write","while"]
     
     let words2 = ["valley","I","departure","reveal","blow","the","conviction","dealer","is","ministry","observation","a","estimate","house","donor","cemetery","breast","revoke","favor","to","they","that"]
     
     let words3 = ["beauty","bare","at","as","as","an","a","a","ed","dream","cry","but","forest","fiddle","fast","er","enormous","lather","it","it","his","moon","sausage","lagomorph","rain","song","to","wind","were","together","you","boy","bear"]
     
+    var selectedBank: [String]?
+    
     var backgroundImage: UIImage?
     
     @IBAction func reset(_ sender: Any) {
-
-        //placeWords()
+        deleteWords()
+        placeWords(selectedBank)
     }
     
     @IBAction func share(_ sender: AnyObject) {
@@ -45,6 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.orange
+        selectedBank = words1
         placeWords()
     }
     
@@ -65,7 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     //MARK: - Word Placement Methods
     // Places each word from word bank in rows
-    func placeWords() {
+    func placeWords(_ wordSet: Array<String>? = nil) {
         let wordSpacing: CGFloat = 10
         let safety: CGFloat = 20
         let topMargin: CGFloat = UIScreen.main.bounds.size.height / 20
@@ -76,7 +79,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         var x = safety
         var y = safety
         
-        for word in words {
+        // Fill wordArray with parameterized array, or default array if none specified
+        var wordArray: Array<String>
+        if wordSet != nil {
+            wordArray = wordSet!
+        } else {
+            wordArray = words1
+        }
+        
+        for word in wordArray {
             let label = UILabel()
             label.backgroundColor = UIColor.white
             label.text = word
@@ -117,7 +128,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     func deleteWords(){
-        
+        for subview in view.subviews {
+            if subview.isKind(of: UILabel.self) {
+                subview.removeFromSuperview()
+            }
+        }
     }
     
     //MARK: - Pan Gestures

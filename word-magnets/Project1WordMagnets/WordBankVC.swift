@@ -9,12 +9,14 @@
 import UIKit
 
 class WordBankVC: UITableViewController {
-
-    @IBAction func cancelTapped(_ sender: AnyObject) {
-    dismiss(animated: true, completion: nil)
-    }
+    //let viewController =
     var banks = ["Set 1", "Set 2", "Set 3"]
+    var selectedBank = "Set 1"
     
+    @IBAction func cancelTapped(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,7 +39,5 @@ class WordBankVC: UITableViewController {
 
         return cell
     }
-
-
+    
 }
-

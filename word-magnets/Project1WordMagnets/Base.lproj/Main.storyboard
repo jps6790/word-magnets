@@ -76,7 +76,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="mMT-Tl-sEx"/>
                                     <barButtonItem title="Word Banks" id="ygp-5g-ZfS">
                                         <connections>
-                                            <segue destination="Gby-Pn-uPZ" kind="popoverPresentation" identifier="showColorSegue" popoverAnchorBarButtonItem="ygp-5g-ZfS" id="YhP-64-NT5">
+                                            <segue destination="Gby-Pn-uPZ" kind="popoverPresentation" identifier="showWordsSegue" popoverAnchorBarButtonItem="ygp-5g-ZfS" id="YhP-64-NT5">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
