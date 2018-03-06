@@ -15,3 +15,24 @@ Current checkpoint progress:
 
 Images are in the images directory of this repository
 https://github.com/jps6790/word-magnets/tree/nathan/images
+
+--------------------------
+
+Final Product
+
+Title: MagWords
+
+New Features: Users can now share their poems, along with a nice background image.
+
+Progress:
+-Updated icon
+-Share function for both iphone and ipad
+-Can change image background
+-Word data has been moved to AppData
+-Code that places the words has been reworked
+
+Extras:
+-Words scale based on iPhone or iPad
+-Reset function
+
+Images: https://github.com/jps6790/word-magnets/tree/master/images/FINAL
