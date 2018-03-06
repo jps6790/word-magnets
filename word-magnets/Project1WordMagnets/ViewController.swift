@@ -27,6 +27,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func share(_ sender: AnyObject) {
+        
+        
 
         let image = self.view.takeSnapshot()
         let textToShare = "I made a poem!"
@@ -34,6 +36,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!,image!]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.excludedActivityTypes = [UIActivityType.print]
+        
+        //code here prevents crashing if on iPad
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            activityVC.popoverPresentationController?.sourceView = self.view
+            activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
+            activityVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0) //Removes arrow as I dont want it
+        }
         self.present(activityVC, animated: true, completion: nil)
     }
     @IBAction func setImageBG(_ sender: Any) {
@@ -136,6 +145,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         }
     }
     
+    //deletes words off the view. Used for replacing.
     func deleteWords(){
         for subview in view.subviews {
             if subview.isKind(of: UILabel.self) {
