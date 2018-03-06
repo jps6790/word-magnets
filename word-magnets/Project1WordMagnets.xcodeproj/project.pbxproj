@@ -18,12 +18,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F26DDD3203BBFC10091807C /* WordBankVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBankVC.swift; sourceTree = "<group>"; };
-		3FA2FED6204E40E700BA8456 /* UIView + takeSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + takeSnapshot.swift"; sourceTree = "<group>"; };
+		3F26DDD3203BBFC10091807C /* WordBankVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WordBankVC.swift; path = VC/WordBankVC.swift; sourceTree = "<group>"; };
+		3FA2FED6204E40E700BA8456 /* UIView + takeSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView + takeSnapshot.swift"; path = "VC/UIView + takeSnapshot.swift"; sourceTree = "<group>"; };
 		3FA2FED8204E48C700BA8456 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		A76C26FC20317E39003E011E /* Project1WordMagnets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1WordMagnets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76C26FF20317E39003E011E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A76C270120317E3A003E011E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A76C270120317E3A003E011E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = VC/ViewController.swift; sourceTree = "<group>"; };
 		A76C270420317E3A003E011E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A76C270620317E3A003E011E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A76C270920317E3A003E011E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
