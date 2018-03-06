@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3F26DDD4203BBFC10091807C /* WordBankVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F26DDD3203BBFC10091807C /* WordBankVC.swift */; };
 		3FA2FED7204E40E800BA8456 /* UIView + takeSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2FED6204E40E700BA8456 /* UIView + takeSnapshot.swift */; };
+		3FA2FED9204E48C700BA8456 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2FED8204E48C700BA8456 /* AppData.swift */; };
 		A76C270020317E39003E011E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C26FF20317E39003E011E /* AppDelegate.swift */; };
 		A76C270220317E3A003E011E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C270120317E3A003E011E /* ViewController.swift */; };
 		A76C270520317E3A003E011E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A76C270320317E3A003E011E /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		3F26DDD3203BBFC10091807C /* WordBankVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBankVC.swift; sourceTree = "<group>"; };
 		3FA2FED6204E40E700BA8456 /* UIView + takeSnapshot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + takeSnapshot.swift"; sourceTree = "<group>"; };
+		3FA2FED8204E48C700BA8456 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		A76C26FC20317E39003E011E /* Project1WordMagnets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project1WordMagnets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76C26FF20317E39003E011E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A76C270120317E3A003E011E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				A76C270B20317E3A003E011E /* Info.plist */,
 				3FA2FED6204E40E700BA8456 /* UIView + takeSnapshot.swift */,
 				3F26DDD3203BBFC10091807C /* WordBankVC.swift */,
+				3FA2FED8204E48C700BA8456 /* AppData.swift */,
 			);
 			path = Project1WordMagnets;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				A76C270020317E39003E011E /* AppDelegate.swift in Sources */,
 				3F26DDD4203BBFC10091807C /* WordBankVC.swift in Sources */,
 				3FA2FED7204E40E800BA8456 /* UIView + takeSnapshot.swift in Sources */,
+				3FA2FED9204E48C700BA8456 /* AppData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

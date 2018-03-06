@@ -11,11 +11,11 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     // Word banks
+    /*
     let words1 = ["could","cloud","bot","bit","ask","a","geek","flame","file","ed","ed","create","like","lap","is","ing","I","her","drive","get","soft","screen","protect","online","meme","to","they","that","tech","space","source","y","write","while"]
+    */
     
-    let words2 = ["valley","I","departure","reveal","blow","the","conviction","dealer","is","ministry","observation","a","estimate","house","donor","cemetery","breast","revoke","favor","to","they","that"]
-    
-    let words3 = ["beauty","bare","at","as","as","an","a","a","ed","dream","cry","but","forest","fiddle","fast","er","enormous","lather","it","it","his","moon","sausage","lagomorph","rain","song","to","wind","were","together","you","boy","bear"]
+    let words1 = AppData.shared.fetchWords()
     
     var selectedBank: [String]?
     
@@ -28,8 +28,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     @IBAction func share(_ sender: AnyObject) {
         
-        
-
         let image = self.view.takeSnapshot()
         let textToShare = "I made a poem!"
         let igmWebsite = NSURL(string: "http://igm.rit.edu/")
@@ -41,7 +39,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         if UIDevice.current.userInterfaceIdiom == .pad {
             activityVC.popoverPresentationController?.sourceView = self.view
             activityVC.popoverPresentationController?.sourceRect = CGRect(x: view.bounds.midX, y: view.bounds.midY, width: 0, height: 0)
-            activityVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0) //Removes arrow as I dont want it
+            activityVC.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.init(rawValue: 0)
         }
         self.present(activityVC, animated: true, completion: nil)
     }
