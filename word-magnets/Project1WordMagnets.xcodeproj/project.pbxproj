@@ -52,6 +52,24 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		3F5745F1204F51E500C283DE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A76C270320317E3A003E011E /* Main.storyboard */,
+				A76C270820317E3A003E011E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3F5745F2204F520700C283DE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A76C26FF20317E39003E011E /* AppDelegate.swift */,
+				3FA2FED8204E48C700BA8456 /* AppData.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		A76C26F320317E39003E011E = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +89,11 @@
 		A76C26FE20317E39003E011E /* Project1WordMagnets */ = {
 			isa = PBXGroup;
 			children = (
-				A76C26FF20317E39003E011E /* AppDelegate.swift */,
 				3F5745F0204F50D100C283DE /* VC */,
-				A76C270320317E3A003E011E /* Main.storyboard */,
+				3F5745F1204F51E500C283DE /* Storyboards */,
 				A76C270620317E3A003E011E /* Assets.xcassets */,
-				A76C270820317E3A003E011E /* LaunchScreen.storyboard */,
 				A76C270B20317E3A003E011E /* Info.plist */,
-				3FA2FED8204E48C700BA8456 /* AppData.swift */,
+				3F5745F2204F520700C283DE /* App */,
 			);
 			path = Project1WordMagnets;
 			sourceTree = "<group>";
