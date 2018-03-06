@@ -27,14 +27,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
     
     @IBAction func share(_ sender: AnyObject) {
-        //TODO: Fix file with takeSnapshot() method to implement in ViewController.swift
-//        let image = self.view.takeSnapshot()
-//        let textToShare = "I made a poem!"
-//        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
-//        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!,image!]
-//        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-//        activityVC.excludedActivityTypes = [UIActivityType.print]
-//        self.present(activityVC, animated: true, completion: nil)
+
+        let image = self.view.takeSnapshot()
+        let textToShare = "I made a poem!"
+        let igmWebsite = NSURL(string: "http://igm.rit.edu/")
+        let objectsToShare:[AnyObject] = [textToShare as AnyObject, igmWebsite!,image!]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityType.print]
+        self.present(activityVC, animated: true, completion: nil)
     }
     @IBAction func setImageBG(_ sender: Any) {
         let imagePickerController = UIImagePickerController()
@@ -69,10 +69,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     //MARK: - Word Placement Methods
     // Places each word from word bank in rows
     func placeWords(_ wordSet: Array<String>? = nil) {
+        
+        //adjusts screen size based on device. Default is if on phone.
+        var screenAdjust: CGFloat = 1.0
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            screenAdjust = 1.50
+        }
+        
         let wordSpacing: CGFloat = 10
         let safety: CGFloat = 20
         let topMargin: CGFloat = UIScreen.main.bounds.size.height / 20
-        let minMagnetLength: CGFloat = 40
+        let minMagnetLength: CGFloat = 40 * screenAdjust
         let minMagnetHeight = minMagnetLength
         let magnetAdjustmentValue = minMagnetLength / 2
         var wordRow = 0
@@ -89,6 +96,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         
         for word in wordArray {
             let label = UILabel()
+            if UIDevice.current.userInterfaceIdiom == .pad{ //adjusts font size if on iPad
+                label.font = label.font.withSize(30)
+            }
+            
             label.backgroundColor = UIColor.white
             label.text = word
             label.textAlignment = .center
@@ -115,11 +126,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             // Position words
             label.frame.origin.x = x
             label.frame.origin.y = y
-            
             x = x + label.frame.size.width + wordSpacing
             
             label.isUserInteractionEnabled = true
-            
             let panGesture = UIPanGestureRecognizer(target: self, action: #selector(doPanGesture))
             label.addGestureRecognizer(panGesture)
             
